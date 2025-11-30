@@ -3,9 +3,9 @@ package rules
 import (
 	"fmt"
 
-	C "github.com/metacubex/mihomo/constant"
-	RC "github.com/metacubex/mihomo/rules/common"
-	"github.com/metacubex/mihomo/rules/logic"
+	C "github.com/parentalclash/parentalclash/constant"
+	RC "github.com/parentalclash/parentalclash/rules/common"
+	"github.com/parentalclash/parentalclash/rules/logic"
 	RP "github.com/metacubex/mihomo/rules/provider"
 )
 
