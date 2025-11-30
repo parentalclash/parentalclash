@@ -31,7 +31,7 @@ func (d *Schedule) RuleType() C.RuleType {
 	return C.Schedule
 }
 
-func (d *Schedule) Match(metadata *C.Metadata) (bool, string) {
+func (d *Schedule) Match(metadata *C.Metadata, helper C.RuleMatchHelper) (bool, string) {
 	now := time.Now()
 	//log.Infoln("system time is %", now.Format("2006-01-02 15:04:05.000 Mon Jan"))
 	if d.weekDayArr[now.Weekday()] {

@@ -79,7 +79,7 @@ func (d *SrcMAC) Payload() string {
 	return d.mac
 }
 
-func NewMAC(mac string, adapter string) *SrcMAC {
+func NewMAC(mac string, adapter string, helper C.RuleMatchHelper) *SrcMAC {
 	punycode, _ := idna.ToASCII(strings.ToLower(mac))
 	return &SrcMAC{
 		Base:    &Base{},
