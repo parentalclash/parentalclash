@@ -3,9 +3,9 @@ package rules
 import (
 	"fmt"
 
-	C "github.com/parentalclash/parentalclash/constant"
-	RC "github.com/parentalclash/parentalclash/rules/common"
-	"github.com/parentalclash/parentalclash/rules/logic"
+	C "github.com/metacubex/mihomo/constant"
+	RC "github.com/metacubex/mihomo/rules/common"
+	"github.com/metacubex/mihomo/rules/logic"
 	RP "github.com/metacubex/mihomo/rules/provider"
 )
 
@@ -82,9 +82,9 @@ func ParseRule(tp, payload, target string, params []string, subRules map[string]
 	case "NOT":
 		parsed, parseErr = logic.NewNOT(payload, target, ParseRule)
 	case "SRC-MAC":
-		parsed = RC.NewMAC(payload, target, ParseRule)
+		parsed = RC.NewMAC(payload, target)
 	case "SCHEDULE":
-		parsed, parseErr = RC.NewSchedule(payload, target, ParseRule)
+		parsed, parseErr = RC.NewSchedule(payload, target)
 	case "RULE-SET":
 		isSrc, noResolve := RC.ParseParams(params)
 		parsed, parseErr = RP.NewRuleSet(payload, target, isSrc, noResolve)

@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	C "github.com/parentalclash/parentalclash/constant"
+	C "github.com/metacubex/mihomo/constant"
 	"github.com/metacubex/mihomo/log"
 	"github.com/patrickmn/go-cache"
 	"golang.org/x/net/idna"
@@ -79,7 +79,7 @@ func (d *SrcMAC) Payload() string {
 	return d.mac
 }
 
-func NewMAC(mac string, adapter string, ruleType C.RuleType) *SrcMAC {
+func NewMAC(mac string, adapter string) *SrcMAC {
 	punycode, _ := idna.ToASCII(strings.ToLower(mac))
 	return &SrcMAC{
 		Base:    &Base{},

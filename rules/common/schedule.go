@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	C "github.com/parentalclash/parentalclash/constant"
+	C "github.com/metacubex/mihomo/constant"
 	"github.com/metacubex/mihomo/log"
 	"golang.org/x/net/idna"
 )
@@ -53,7 +53,7 @@ func (d *Schedule) Payload() string {
 	return d.schedule
 }
 
-func NewSchedule(schedule string, adapter string, ruleType C.RuleType) (*Schedule, error) {
+func NewSchedule(schedule string, adapter string) (*Schedule, error) {
 	punycode, _ := idna.ToASCII(strings.ToUpper(schedule))
 	weekDayArr := [7]bool{false, false, false, false, false, false, false}
 	if len(punycode) != 19 {
