@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	C "github.com/metacubex/mihomo/constant"
+	C "github.com/parentalclash/parentalclash/constant"
 	"github.com/metacubex/mihomo/log"
 	"github.com/patrickmn/go-cache"
 	"golang.org/x/net/idna"
