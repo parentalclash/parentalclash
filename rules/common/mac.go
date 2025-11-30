@@ -40,7 +40,7 @@ func (d *SrcMAC) RuleType() C.RuleType {
 	return C.SrcMAC
 }
 
-func (d *SrcMAC) Match(metadata *C.Metadata) (bool, string) {
+func (d *SrcMAC) Match(metadata *C.Metadata, helper C.RuleMatchHelper) (bool, string) {
 	arpTable, err := getARPTable(false)
 	if err != nil {
 		log.Errorln("can't initial arp table: %s", err)
@@ -79,7 +79,7 @@ func (d *SrcMAC) Payload() string {
 	return d.mac
 }
 
-func NewMAC(mac string, adapter string, helper C.RuleMatchHelper) *SrcMAC {
+func NewMAC(mac string, adapter string) *SrcMAC {
 	punycode, _ := idna.ToASCII(strings.ToLower(mac))
 	return &SrcMAC{
 		Base:    &Base{},
