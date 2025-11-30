@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	C "github.com/metacubex/mihomo/constant"
+	C "github.com/parentalclash/parentalclash/constant"
 	"github.com/metacubex/mihomo/log"
 	"golang.org/x/net/idna"
 )
